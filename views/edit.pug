@@ -1,0 +1,26 @@
+extend layout
+
+block content
+  .form-container
+    form(class="form-signin" method="POST" action="/auth/register")
+      h2 Your Profiles
+
+      .form-group
+        label( for="username" class="sr-only") Username
+        input(type="text" name="username" id="username" class="form-control" value=user.username readonly)
+
+      .form-group
+        label(for="password" class="sr-only") Password
+        input(type="password" name="password" id="password" class="form-control" placeholder="Password")
+
+      .form-group
+        label( for="firstname" class="sr-only") First Name
+        input(type="text" name="firstname" id="firstname" class="form-control" value=user.firstname required)
+
+      .form-group
+        label( for="lastname" class="sr-only") Last Name
+        input(type="text" name="lastname" id="lastname" class="form-control" value=user.lastname)
+     
+
+      button(class="btn btn-primary btn-block" type="submit") Save
+      button(class="btn btn-primary btn-block" id="signout" onclick="location.href='/login'" type="button") Logout
